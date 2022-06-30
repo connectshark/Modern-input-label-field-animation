@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --btn-color: #A6D805;
+  --primary: #111;
+  --bounce: cubic-bezier(.47,1.64,.41,.8);
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+form {
+  width: 90%;
+  max-width: 300px;
+}
+h1{
+  font-size: 2rem;
+  line-height: 2;
+  margin: 0 0 1rem;
+}
+
+.row{
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.row:last-child {
+  text-align: right;
+}
+
+#name, #email {
+  width: 100%;
+  border: 3px solid var(--primary);
+  outline: none;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 0 0 var(--primary);
+  transform: translate(0, 0);
+  transition:
+    transform .3s var(--bounce),
+    box-shadow .3s var(--bounce);
+}
+
+#name::placeholder, #email::placeholder{
+  color: transparent;
+}
+
+#name:focus, #email:focus, #name:not(:placeholder-shown), #email:not(:placeholder-shown){
+  box-shadow: 7px 7px 0 #000;
+  transform: translate(-7px, -7px);
+  padding: 1.5rem 1rem .5rem;
+}
+label {
+  position: absolute;
+  top: calc(1rem + 4px);
+  left: 1rem;
+  margin: auto;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #999;
+  pointer-events: none;
+  transition:
+    font-size .3s var(--bounce),
+    color .3s var(--bounce),
+    top .3s var(--bounce),
+    left .3s var(--bounce);
+}
+#name:focus ~ label,
+#email:focus ~ label,
+#name:not(:placeholder-shown) ~ label,
+#email:not(:placeholder-shown) ~ label{
+  font-size: .5rem;
+  top: .4rem;
+  left: .8rem;
+  color: var(--primary);
+}
+
+input[type="submit"] {
+  background-color: var(--btn-color);
+  border: none;
+  font-size: 1rem;
+  line-height: 2;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  transform: translate(0, 0);
+  transition:
+    transform .3s var(--bounce),
+    box-shadow .3s var(--bounce);
+}
+
+input[type="submit"]:hover{
+  box-shadow: 7px 7px 0 #000;
+  transform: translate(-7px, -7px);
+}

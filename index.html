@@ -5,10 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Input Label Field Animation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body class=" bg-amber-50 min-h-screen place-items-center grid">
-  <div></div>
-  
+<body>
+  <form>
+    <h1>Modern Input</h1>
+    <div class="row">
+      <input type="text" id="name" placeholder="Enter Name" required maxlength="30">
+      <label for="name">Enter Name</label>
+    </div>
+    <div class="row">
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <label for="email">Enter Email</label>
+    </div>
+    <div class="row">
+      <input type="submit" value="Sign Up">
+    </div>
+  </form>
 </body>
 </html>
